@@ -16,7 +16,8 @@ public class CrearCubo : MonoBehaviour
     }
     private void Awake()
     {
-        GameObject tempGameObject = Instantiate<GameObject>(prefabcubo);
+        GameObject gameObject1 = Instantiate<GameObject>(prefabcubo);
+        GameObject tempGameObject = gameObject1;
         tempGameObject.name = "CuboEnAwake";
         Color c = new Color(Random.value, Random.value, Random.value);
         tempGameObject.GetComponent<MeshRenderer>().material.color = c;
