@@ -13,8 +13,7 @@ public class TareaModulo7 : MonoBehaviour
 
     bool variable1;
     bool variable2;
-    bool variable3;
-     int valor1 = 0;
+    int valor1 = 0;
     int limiteInferior = -5;
     int limiteSuperior = 5;
 
@@ -37,102 +36,84 @@ public class TareaModulo7 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        variable1 = true;
-        variable2 = false;
-        variable3 = true;
-       
+        if (valor1 >= 0)
+        {
+            variable1 = true;
+            variable2 = false;
+        }
+        else
+            variable1 = false;
+        variable2 = true;
+
     }
+
+
+
     private void FixedUpdate()
     {
         //cubo1
         valor1 = Random.Range(limiteInferior, limiteSuperior);
         Debug.Log(valor1);
-        if (valor1 >= 0)
+        if (Mathf.Sign(valor1) == -1)// si el valor de "valor uno es negativo"entonces:
         {
+            //cubo1
             variable1 = true;
-            variable2 = true;
-
-        }
-        else
-        {
-            variable1 = false;
-            variable2 = false;
-        }
-
-        if (variable1 == true)
-        {
-            Debug.Log("Cubo1True");
+            Debug.Log("cubo1True");
             GameObject_GO.GetComponent<MeshRenderer>().material.color = Color.white;
 
-        }
-        else
-        {
-            Debug.Log("Cubo1false");
-            GameObject_GO.GetComponent<MeshRenderer>().material.color = Color.black;
-        }
-        //cubo2
-        if (valor1 >= 0)
-        {
-            variable1 = true;
-            variable2 = true;
-
-        }
-        else
-        {
-            variable1 = false;
+            //cubo2
             variable2 = false;
+            Debug.Log("cubo2False");
+            GameObject_GO2.GetComponent<MeshRenderer>().material.color = Color.black;
         }
-
-        if (variable2 == true)
+        else // aqui entran los valores que sean positivos
         {
-            Debug.Log("Cubo2True");
+            //cubo1
+            variable1 = false;
+            Debug.Log("cubo1False");
+            GameObject_GO.GetComponent<MeshRenderer>().material.color = Color.black;
+
+            //cubo2
+            variable2 = true;
+            Debug.Log("cubo2True");
             GameObject_GO2.GetComponent<MeshRenderer>().material.color = Color.white;
 
         }
-        else
-        {
-            Debug.Log("Cubo2false");
-            GameObject_GO2.GetComponent<MeshRenderer>().material.color = Color.black;
-        }
-        //cubo3 con AND
+        // aqui es la operacion con AND cubo 3
         if (variable1 && variable2)
         {
-            Debug.Log("Cubo3true");
+            //cubo3            
+            Debug.Log("cubo3true");
             GameObject_GO3.GetComponent<MeshRenderer>().material.color = Color.white;
 
         }
         else
-        {
-            Debug.Log("Cubo3False");
+        {            
+            Debug.Log("cubo3False");
             GameObject_GO3.GetComponent<MeshRenderer>().material.color = Color.black;
-        }
-        //cubo4 con or es copia del objeto 3 pero con OR
-        if (variable1 || variable2)
-        {
-            Debug.Log("Cubo4true");
-            GameObject_GO4.GetComponent<MeshRenderer>().material.color = Color.white;
+            
+            if (variable1 || variable2)
+            {                           
+                Debug.Log("cubo4true");
+                GameObject_GO4.GetComponent<MeshRenderer>().material.color = Color.white;
 
-        }
-        else
-        {
-            Debug.Log("Cubo4False");
-            GameObject_GO4.GetComponent<MeshRenderer>().material.color = Color.black;
+            }
+            else
+            {                
+                Debug.Log("cubo4False");
+                GameObject_GO4.GetComponent<MeshRenderer>().material.color = Color.black;
 
-        }
-        //cubo5 combinando los resultados de el cubo3 y cubo 4
-        if(variable1 && variable2 && variable3)
-        {
-            Debug.Log("Cubo5true");
-            GameObject_GO5.GetComponent<MeshRenderer>().material.color = Color.white;
+                //cubo5
+                if(variable1 && variable2 && variable1)
+                {
+                    Debug.Log("cubo5true");
+                    GameObject_GO5.GetComponent<MeshRenderer>().material.color = Color.black;
+                }
 
-        }
-        else
-        {
-            Debug.Log("Cubo5False");
-            GameObject_GO5.GetComponent<MeshRenderer>().material.color = Color.black;
+            }
         }
     }
-}
+}       
 
 
 
