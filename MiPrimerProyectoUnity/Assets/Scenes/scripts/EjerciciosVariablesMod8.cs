@@ -12,6 +12,7 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
     long milong = 2;
     int miint = 0;
     float mifloat = 0;
+    decimal midecimal = 0;
     string CharValor1;
 
 
@@ -23,13 +24,13 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         string mystring = "134.4365790132273892";
         float value = float.Parse(mystring);
         Debug.Log(value);
-        miCaracter1 = mystring[5];//3
+        miCaracter1 = (char)(decimal)mystring[5];//3
         Debug.Log(miCaracter1);
-        miCaracter1 = mystring[0];//1
+        miCaracter1 = (char)(decimal)mystring[0];//1
         Debug.Log(miCaracter1);
-        miCaracter1 = mystring[7];//5
+        miCaracter1 = (char)(decimal)mystring[7];//5
         Debug.Log(miCaracter1);
-        miCaracter1 = mystring[6];//6
+        miCaracter1 = (char)(decimal)mystring[6];//6
         Debug.Log(miCaracter1);
 
 
@@ -77,11 +78,24 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         //par, por ejemplo “Hola Mundo”, solo deberá imprimir los caracteres: H,l, ,u,d. (recuerda para
         //qué sirve el uso del operador módulo).
 
-         string Name = "Eleazar";
-        Name.Replace("l", " ");
-        Debug.Log(Name);
-        
-        
+        char MiOracion;
+        string MiNombre = "Eleazar Garcia Acosta";
+        int MiNombrePar = MiNombre.IndexOf(MiNombre);
+        Debug.Log(MiNombrePar);
+
+
+        //Crea un string guarda, una oración en él y elimina los primeros 5 caracteres de este ya sea 
+        //con la función substring, Split, o cualquier otro método disponible en la clase String.
+        void Main (string[] args)
+        {
+            string CincoCaracteres = "Eleazar Garcia Acosta";
+            string NuevoCinco = CincoCaracteres.Substring(6);
+            Debug.Log($"Resultado:{NuevoCinco}");
+
+        }
+       
+
+
 
 
 
