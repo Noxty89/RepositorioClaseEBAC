@@ -12,9 +12,8 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
     long milong = 2;
     int miint = 0;
     float mifloat = 0;
-    decimal midecimal = 0;
-    string CharValor1;
-
+  
+    
 
     // Start is called before the first frame update
     void Start()
@@ -66,52 +65,49 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         //Crea dos variables string que guarden valores numéricos de miles, pasalas a tipos de datos 
         //numéricos utilizando la función tryParse, realiza una operación con ellas e imprime el
         //resultado.
-        char k = '3';
-        char l = '6';
-        int valorentrero = 1000;
-        if (!int.TryParse(k + l.ToString(), out valorentrero))
-        {
-            Debug.Log(valorentrero);
-        }
+        string uno = "1";
+        string dos = "2";
+        int resultado = 0;
 
+        resultado = int.Parse(uno + dos);
+        Debug.Log(resultado);
+
+        // Imprimira: 12
+        
+        resultado = int.Parse(uno) + int.Parse(dos);
+        Debug.Log(resultado);
+        //Imprimira: 3
+       
         //Crea un string con una oración, imprime sólo los caracteres que se encuentren en un índice 
         //par, por ejemplo “Hola Mundo”, solo deberá imprimir los caracteres: H,l, ,u,d. (recuerda para
         //qué sirve el uso del operador módulo).
 
-        char MiOracion;
-        string MiNombre = "Eleazar Garcia Acosta";
-        int MiNombrePar = MiNombre.IndexOf(MiNombre);
-        Debug.Log(MiNombrePar);
+        string MensajeSoloPares = "Eleazar";
+        int solopares = MensajeSoloPares.Length;
+        if (solopares % 2 != 0)
+        {
+            Debug.Log(solopares);
+        }
+        
+        
+        
 
 
         //Crea un string guarda, una oración en él y elimina los primeros 5 caracteres de este ya sea 
         //con la función substring, Split, o cualquier otro método disponible en la clase String.
-        void Main (string[] args)
-        {
+        
             string CincoCaracteres = "Eleazar Garcia Acosta";
-            string NuevoCinco = CincoCaracteres.Substring(6);
+            string NuevoCinco = CincoCaracteres.Substring(6,20);
             Debug.Log($"Resultado:{NuevoCinco}");
 
-        }
-       
-
-
-
-
-
-
-
-
-
-
-
-        //Crea dos variables flotantes, has una operación entre ellas y obtén el resultado en un tipo de 
+               
+         //Crea dos variables flotantes, has una operación entre ellas y obtén el resultado en un tipo de 
         //dato entero que requiera un casteo explícito.
-        float a, b, c;
+        int a, b, c;
         a = 5;
         b = 2;
 
-        c = a / b;
+        c = (int)a / b;
         Debug.Log(c);
 
         //Utilizar un string y una sentencia switch y dependiendo de la palabra, el cubo deberá 
@@ -176,7 +172,7 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         b = 6;
 
         miint = Random.Range(a, b);
-        if (miint % 2 != 0)
+        if (miint % 2 == 0)
         {
             Debug.Log("El Numero" + miint + "Es Par");
             GameObject_1.GetComponent<MeshRenderer>().material.color = Color.white;
