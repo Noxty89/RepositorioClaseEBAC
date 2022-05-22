@@ -63,36 +63,59 @@ public class CiclosModulo9 : MonoBehaviour
         //completa en la consola en un solo string.
 
 
-        string[] Palabras = new string[5] { "hola", "Como", "te", "sientes", "hoy" };
+        //string[] Palabras = new string[5] { "hola", "Como", "te", "sientes", "hoy" };
 
-        string OraCompleta = " ";
-        foreach (string text in Palabras)
+        //string OraCompleta = " ";
+        //foreach (string text in Palabras)
+        //{
+        //    OraCompleta = OraCompleta + " " + text;
+
+
+        //}
+        //Debug.Log(OraCompleta);
+
+        //Crea un arreglo bidimensional de enteros de 2 renglones y 3 columnas al menos y
+        //multiplícalo por un arreglo unidimensional de enteros con la cantidad de elementos
+        //que se alinee a la cantidad de renglones del arreglo bidimensional de tal manera que
+        //la operación sea una multiplicación matriz.
+
+        int[,] ArrBi = new int[3, 2] { { 1, 2,  }, { 3, 4, }, { 5, 6, } };
+        for (int j = 0; j < ArrBi.GetLength(0); j++)
         {
-            OraCompleta = OraCompleta + " " + text;
+            for (int k = 0; k < ArrBi.GetLength(1); k++)
+            {
+                for (int l = 0; l < ArrBi.GetLength(2); l++)
+                {
 
-            
+                }
+                int[] ArrUni = new int[3] { 1, 2, 3, };
+                for (int i = 0; i < ArrUni.Length; i++)
+                {
+
+                }
+                int[,] Matrismulti = new int[3, 2] { { 1, 2, }, { 3, 4, }, { 5, 6, } };
+               
+                for (int u = 0; u < Matrismulti.GetLength(0); u++)
+                {
+                    for (int v = 0; v < Matrismulti.GetLength(1); v++)
+                    {
+                        for (int w = 0; w < Matrismulti.GetLength(2); w++)
+                        {
+                            Matrismulti[u, v] = ArrBi[j, k] * ArrUni(i);
+                            u++;
+                            v++;
+
+                        }
+                    }
+                }
+
+            }
         }
-        Debug.Log(OraCompleta);
+        
+ 
 
 
-
-
-
-
-        //for (int i = 0; i < 10; i++)
-        //{
-        //    Debug.Log(i);
-        //}
-        //while (Contador < 10)
-        //{
-        //    Contador++;
-        //    Debug.Log("hola");
-        //}
-
-
-
-
-    }
+        }
 
     // Update is called once per frame
     void Update()
