@@ -25,39 +25,39 @@ public class CiclosModulo9 : MonoBehaviour
         //función Random.Range con números enteros, después crea un tercer arreglo y llénalo
         //con la suma de los elementos de los primeros dos: por ejemplo arr3[5] = arr1[5] + arr[6]
 
-        int[] MisEnteros = new int[5] { '1', '2', '3', '4', '5' };
+        //int[] MisEnteros = new int[5] { '1', '2', '3', '4', '5' };
 
 
-        for (int i = 0; i < MisEnteros.Length; i++)
-        {
-            Debug.Log("valor de i" + " " + MisEnteros[i]);
+        //for (int i = 0; i < MisEnteros.Length; i++)
+        //{
+        //    Debug.Log("valor de i" + " " + MisEnteros[i]);
 
-        }
-        int[] MisEnteros1 = new int[5] { '1', '2', '3', '4', '5' };
-        for (int i = 0; i < MisEnteros1.Length; i++)
-        {
-            Debug.Log("valor de k" + " " + MisEnteros1[i]);
-        }
-        int[] MisEnteros2 = new int[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', };
-        int j = 0;
-        for (int i = 0; i < MisEnteros2.Length; i++)
-        {
-            MisEnteros2[j] = MisEnteros[i] + MisEnteros1[i];
-            j++;
-            MisEnteros2[j] = MisEnteros[i] + MisEnteros1[i];
-            j++;
+        //}
+        //int[] MisEnteros1 = new int[5] { '1', '2', '3', '4', '5' };
+        //for (int i = 0; i < MisEnteros1.Length; i++)
+        //{
+        //    Debug.Log("valor de k" + " " + MisEnteros1[i]);
+        //}
+        //int[] MisEnteros2 = new int[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', };
+        //int j = 0;
+        //for (int i = 0; i < MisEnteros2.Length; i++)
+        //{
+        //    MisEnteros2[j] = MisEnteros[i] + MisEnteros1[i];
+        //    j++;
+        //    MisEnteros2[j] = MisEnteros[i] + MisEnteros1[i];
+        //    j++;
 
-            string Arr3 = " ";
-            foreach (int num in MisEnteros2)
-            {
-                Arr3 = Arr3 + " " + num;
-            }
-            Debug.Log(Arr3);
+        //    string Arr3 = " ";
+        //    foreach (int num in MisEnteros2)
+        //    {
+        //        Arr3 = Arr3 + " " + num;
+        //    }
+        //    Debug.Log(Arr3);
 
-        }
-        {
+        //}
+        //{
 
-        }
+        //}
         //        Crea un arreglo de strings y llena cada elemento con una palabra de una oración, 
         //después utilizando un ciclo foreach concatena sus elementos e imprime la oración
         //completa en la consola en un solo string.
@@ -79,38 +79,48 @@ public class CiclosModulo9 : MonoBehaviour
         //que se alinee a la cantidad de renglones del arreglo bidimensional de tal manera que
         //la operación sea una multiplicación matriz.
 
-        //int[,] ArrBi = new int[3, 2] { { 1, 2,  }, { 3, 4, }, { 5, 6, } };
-        //for (int j = 0; j < ArrBi.GetLength(0); j++)
-        //{
-        //    for (int k = 0; k < ArrBi.GetLength(1); k++)
-        //    {
-        //        for (int l = 0; l < ArrBi.GetLength(2); l++)
-        //        {
+        int[,] ArrBi = new int[2, 3] { { 1, 2, 3, }, { 4, 5, 6, } };
+        for (int j = 0; j < ArrBi.GetLength(0); j++)
+        {
+            for (int k = 0; k < ArrBi.GetLength(1); k++)
+            {
+                int ArrBilleno = ' ';
+                foreach (int num in ArrBi)
+                    ArrBilleno = ArrBilleno + ' ' + num;
+                Debug.Log(ArrBilleno);
 
-        //        }
-        //        int[] ArrUni = new int[3] { 1, 2, 3, };
-        //        for (int i = 0; i < ArrUni.Length; i++)
-        //        {
+                int[] ArrUni = new int[3] { 1, 2, 3, };
+                for (int i = 0; i < ArrUni.Length; i++)
+                {
+                    int Arrunilleno = ' ';
+                    foreach (int num in ArrUni)
+                        Arrunilleno = Arrunilleno + ' ' + num;
 
-        //        }
-        //        int[,] Matrismulti = new int[3, 2] { { 1, 2, }, { 3, 4, }, { 5, 6, } };
+                    Debug.Log(Arrunilleno);
+                }
+                int[,] Matrismulti = new int[2, 3] { { 1, 2, 3,}, { 4, 5, 6,} };
 
-        //        for (int u = 0; u < Matrismulti.GetLength(0); u++)
-        //        {
-        //            for (int v = 0; v < Matrismulti.GetLength(1); v++)
-        //            {
-        //                for (int w = 0; w < Matrismulti.GetLength(2); w++)
-        //                {
-        //                    Matrismulti[u, v] = ArrBi[j, k] * ArrUni(i);
-        //                    u++;
-        //                    v+
+                for (int u = 0; u < Matrismulti.GetLength(0); u++)
+                {
+                    for (int v = 0; v < Matrismulti.GetLength(1); v++)
+                    {
+                        {
+                            Matrismulti[u, v] = ArrBi[j, k] * ArrUni[0];
+                            u++;
+                            v++;
+                            Matrismulti[u, v] = ArrBi[j, k] * ArrUni[2];
+                            u++;
+                            v++;
+                            Matrismulti[u, v] = ArrBi[j, k] * ArrUni[3];
+                            u++;
+                            v++;
+                        }
+                        Debug.Log(Matrismulti);
+                    }
+                }
 
-        //                }
-        //            }
-        //        }
-
-        //    }
-        //}
+            }
+        }
 
 
 
