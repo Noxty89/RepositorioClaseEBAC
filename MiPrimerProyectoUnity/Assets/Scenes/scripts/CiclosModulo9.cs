@@ -25,7 +25,7 @@ public class CiclosModulo9 : MonoBehaviour
         //función Random.Range con números enteros, después crea un tercer arreglo y llénalo
         //con la suma de los elementos de los primeros dos: por ejemplo arr3[5] = arr1[5] + arr[6]
 
-        //int[] MisEnteros = new int[5] { '1', '2', '3', '4', '5' };
+        //int[] MisEnteros = new int[5] { 1, 2, 3, 4, 5 };
 
 
         //for (int i = 0; i < MisEnteros.Length; i++)
@@ -33,12 +33,12 @@ public class CiclosModulo9 : MonoBehaviour
         //    Debug.Log("valor de i" + " " + MisEnteros[i]);
 
         //}
-        //int[] MisEnteros1 = new int[5] { '1', '2', '3', '4', '5' };
+        //int[] MisEnteros1 = new int[5] { 1, 2, 3, 4, 5 };
         //for (int i = 0; i < MisEnteros1.Length; i++)
         //{
         //    Debug.Log("valor de k" + " " + MisEnteros1[i]);
         //}
-        //int[] MisEnteros2 = new int[] { '1', '2', '3', '4', '5', '6', '7', '8', '9', };
+        //int[] MisEnteros2 = new int[5] { 1, 2, 3, 4, 5 };
         //int j = 0;
         //for (int i = 0; i < MisEnteros2.Length; i++)
         //{
