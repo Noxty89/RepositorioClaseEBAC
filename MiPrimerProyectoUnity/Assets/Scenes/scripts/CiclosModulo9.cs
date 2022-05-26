@@ -25,9 +25,7 @@ public class CiclosModulo9 : MonoBehaviour
         //función Random.Range con números enteros, después crea un tercer arreglo y llénalo
         //con la suma de los elementos de los primeros dos: por ejemplo arr3[5] = arr1[5] + arr[6]
 
-        //int[] MisEnteros = new int[5] { 1, 2, 3, 4, 5 };
-
-
+        //int[] MisEnteros = new int[5];
         //for (int i = 0; i < MisEnteros.Length; i++)
         //{
         //    Debug.Log("valor de i" + " " + MisEnteros[i]);
@@ -39,22 +37,19 @@ public class CiclosModulo9 : MonoBehaviour
         //    Debug.Log("valor de k" + " " + MisEnteros1[i]);
         //}
         //int[] MisEnteros2 = new int[5] { 1, 2, 3, 4, 5 };
-        //int j = 0;
         //for (int i = 0; i < MisEnteros2.Length; i++)
         //{
-        //    MisEnteros2[j] = MisEnteros[i] + MisEnteros1[i];
-        //    j++;
-        //    MisEnteros2[j] = MisEnteros[i] + MisEnteros1[i];
-        //    j++;
-
-        //    string Arr3 = " ";
-        //    foreach (int num in MisEnteros2)
-        //    {
-        //        Arr3 = Arr3 + " " + num;
-        //    }
-        //    Debug.Log(Arr3);
+        //    MisEnteros2[i] = MisEnteros[i] + MisEnteros1[i];
+        //    i++;
+        //    MisEnteros2[i] = MisEnteros[i] + MisEnteros1[i];
 
         //}
+        //string Arr3 = " ";
+        //foreach (int num in MisEnteros2)
+        //{
+        //    Arr3 = Arr3 + " " + num;
+        //}
+        //Debug.Log(Arr3);
         //{
 
         //}
@@ -97,35 +92,44 @@ public class CiclosModulo9 : MonoBehaviour
                         Arrunilleno = Arrunilleno + ' ' + num;
 
                     Debug.Log(Arrunilleno);
-                }
-                int[,] Matrismulti = new int[2, 3] { { 1, 2, 3,}, { 4, 5, 6,} };
+                    //Primero define el array donde se guardaran los datos.//
+                    int[] ResultArray = new int[ArrBi.GetLength(0)]; //Array de [2,1] es decir, dos filas una columna
 
-                for (int u = 0; u < Matrismulti.GetLength(0); u++)
-                {
-                    for (int v = 0; v < Matrismulti.GetLength(1); v++)
+                   //Aqui se harian 3 multiplicaciones//
+                    for (int z = 0; z < ArrUni.Length; z++)
                     {
+                        for (int w = 0; w < ArrBi.GetLength(0); w++)
                         {
-                            Matrismulti[u, v] = ArrBi[j, k] * ArrUni[0];
-                            u++;
-                            v++;
-                            Matrismulti[u, v] = ArrBi[j, k] * ArrUni[2];
-                            u++;
-                            v++;
-                            Matrismulti[u, v] = ArrBi[j, k] * ArrUni[3];
-                            u++;
-                            v++;
+                            //Aqui se repetirian 2 veces la multiplicacion//
+                            ResultArray[z] += ResultArray[z] + (ArrBi[j,0] * ArrUni[i]);
+                            z++;
+                            ResultArray[w] += ResultArray[w] + (ArrBi[k,0] * ArrUni[i]);
+                            w++;
+                            //primer ciclo con el primer numero del arregloUni tendriamos: ResultArray[0] = 0 + (1 * 7)
+                            //segundo ciclo con el primer numero del arregloUni tendriamos: ResultArray[1] = 0 + (4 * 7)                    
+                            }
                         }
-                        Debug.Log(Matrismulti);
+                    for (int z = 0; z < ArrUni.Length; z++)
+                    {
+                        for (int w = 0; w < ArrBi.GetLength(0); j++)
+                        {
+                            ResultArray[z] += ResultArray[z] + (ArrBi[z, w] * ArrUni[i]);
+                            ResultArray[w] += ResultArray[w] + (ArrBi[z, w] * ArrUni[i]);
+
+                            Debug.Log(ResultArray[0]);
+                            Debug.Log(ResultArray[1]);
+                            //primer ciclo con el tercer numero del arregloUni tendriamos: ResultArray[0] = 23 + (3 * 9)
+                            //segundo ciclo con el tercer numero del arregloUni tendriamos: ResultArray[1] = 68 + (6 * 9)
+                        }
+                      
+                    }
+                
+                            //primer ciclo con el segundo numero del arregloUni tendriamos: ResultArray[0] = 7 + (2 * 8)
+                            //segundo ciclo con el segundo numero del arregloUni tendriamos: ResultArray[1] = 28 + (5 * 8)
+                        }
                     }
                 }
-
-            }
         }
-
-
-
-
-    }
 
     // Update is called once per frame
     void Update()
