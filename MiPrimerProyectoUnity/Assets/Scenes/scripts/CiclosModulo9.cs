@@ -40,7 +40,6 @@ public class CiclosModulo9 : MonoBehaviour
         //for (int i = 0; i < MisEnteros2.Length; i++)
         //{
         //    MisEnteros2[i] = MisEnteros[i] + MisEnteros1[i];
-        //    i++;
         //    MisEnteros2[i] = MisEnteros[i] + MisEnteros1[i];
 
         //}
@@ -81,17 +80,12 @@ public class CiclosModulo9 : MonoBehaviour
             {
                 int ArrBilleno = ' ';
                 foreach (int num in ArrBi)
-                    ArrBilleno = ArrBilleno + ' ' + num;
+                ArrBilleno = ArrBilleno + ' ' + num;
                 Debug.Log(ArrBilleno);
 
                 int[] ArrUni = new int[3] { 1, 2, 3, };
                 for (int i = 0; i < ArrUni.Length; i++)
                 {
-                    int Arrunilleno = ' ';
-                    foreach (int num in ArrUni)
-                        Arrunilleno = Arrunilleno + ' ' + num;
-
-                    Debug.Log(Arrunilleno);
                     //Primero define el array donde se guardaran los datos.//
                     int[] ResultArray = new int[ArrBi.GetLength(0)]; //Array de [2,1] es decir, dos filas una columna
 
@@ -101,40 +95,20 @@ public class CiclosModulo9 : MonoBehaviour
                         for (int w = 0; w < ArrBi.GetLength(0); w++)
                         {
                             //Aqui se repetirian 2 veces la multiplicacion//
-                            ResultArray[z] += ResultArray[z] + (ArrBi[j,0] * ArrUni[i]);
-                            z++;
-                            ResultArray[w] += ResultArray[w] + (ArrBi[k,0] * ArrUni[i]);
-                            w++;
+                            ResultArray[z] += ResultArray[z] + (ArrBi[z,w] * ArrUni[i]);
+                            ResultArray[w] += ResultArray[w] + (ArrBi[z,w] * ArrUni[i]);
                             //primer ciclo con el primer numero del arregloUni tendriamos: ResultArray[0] = 0 + (1 * 7)
                             //segundo ciclo con el primer numero del arregloUni tendriamos: ResultArray[1] = 0 + (4 * 7)                    
                             }
                         }
-                    for (int z = 0; z < ArrUni.Length; z++)
-                    {
-                        for (int w = 0; w < ArrBi.GetLength(0); j++)
-                        {
-                            ResultArray[z] += ResultArray[z] + (ArrBi[z, w] * ArrUni[i]);
-                            ResultArray[w] += ResultArray[w] + (ArrBi[z, w] * ArrUni[i]);
-
-                            Debug.Log(ResultArray[0]);
-                            Debug.Log(ResultArray[1]);
-                            //primer ciclo con el tercer numero del arregloUni tendriamos: ResultArray[0] = 23 + (3 * 9)
-                            //segundo ciclo con el tercer numero del arregloUni tendriamos: ResultArray[1] = 68 + (6 * 9)
-                        }
+         
                       
                     }
                 
-                            //primer ciclo con el segundo numero del arregloUni tendriamos: ResultArray[0] = 7 + (2 * 8)
-                            //segundo ciclo con el segundo numero del arregloUni tendriamos: ResultArray[1] = 28 + (5 * 8)
-                        }
+                }
                     }
                 }
         }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
-}
+
