@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EjerciciosEstructuras : MonoBehaviour
 {
-    public List<int> milista = new List<int>();
-    public HashSet<int> miListaHash = new HashSet<int>();
+    List<int> milista = new List<int>();
+    HashSet<int> miListaHash = new HashSet<int>();
     Queue<string> miQueue = new Queue<string>();
     Stack<string> mistack = new Stack<string>();
     void Start()
@@ -100,7 +100,7 @@ public class EjerciciosEstructuras : MonoBehaviour
         Debug.Log(miQueue.Peek());
         miQueue.Dequeue();
     }
-    public void pushPop()
+    public void pushPopPeek()
     {
         mistack.Push("municion 1");
         mistack.Push("municion 2");
