@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class EjerciciosEstructuras : MonoBehaviour
 {
-    public List<int> milista = new List<int>();
-    public HashSet<int> miListaHash = new HashSet<int>();
+    List<int> milista = new List<int>();
+    HashSet<int> miListaHash = new HashSet<int>();
     Queue<string> miQueue = new Queue<string>();
     Stack<string> mistack = new Stack<string>();
     void Start()
     {
+        for (int i = 0; i < 5; i++)
+        {
+            miListaHash.Add(i);
+            i++;
+            foreach (var num in miListaHash)
+            {
+                int count = 1;
+                mistack.Push("municion" + " " + count++);
+                
+                Debug.Log(mistack.Peek());
+                mistack.Pop();
+            }
+        }
     }
+    
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     //    //Crea una función que reciba como parámetros tres números, llene una lista de
     //    //números aleatorios del tamaño del primer número y los rangos de los números
@@ -86,41 +100,54 @@ public class EjerciciosEstructuras : MonoBehaviour
     //función no retornará nada, solo imprimirá los valores en la consola.
     public void queueDqueuePeek()
     {
-        miQueue.Enqueue("aldeano 1");
-        miQueue.Enqueue("aldeano 2");
-        miQueue.Enqueue("aldeano 3");
-        miQueue.Enqueue("aldeano 4");
-        miQueue.Enqueue("aldeano 5");
-        Debug.Log(miQueue.Peek());
-        miQueue.Dequeue();
-        Debug.Log(miQueue.Peek());
-        miQueue.Dequeue();
-        Debug.Log(miQueue.Peek());
-        miQueue.Dequeue();
-        Debug.Log(miQueue.Peek());
-        miQueue.Dequeue();
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                int count = 0;
+                milista.Add(i);
+                foreach (var num in milista)
+                {
+                    miQueue.Enqueue("aldeano" + " " + count++);
+                    Debug.Log(miQueue.Peek());
+                    miQueue.Dequeue();
+                }
+            }
+            //miQueue.Enqueue("aldeano 1");
+            //miQueue.Enqueue("aldeano 2");
+            //miQueue.Enqueue("aldeano 3");
+            //miQueue.Enqueue("aldeano 4");
+            //miQueue.Enqueue("aldeano 5");
+            //Debug.Log(miQueue.Peek());
+            //miQueue.Dequeue();
+            //Debug.Log(miQueue.Peek());
+            //miQueue.Dequeue();
+            //Debug.Log(miQueue.Peek());
+            //miQueue.Dequeue();
+            //Debug.Log(miQueue.Peek());
+            //miQueue.Dequeue();
+        }
     }
-    public void pushPop()
-    {
-        mistack.Push("municion 1");
-        mistack.Push("municion 2");
-        mistack.Push("municion 3");
-        mistack.Push("municion 4");
-        mistack.Push("municion 5");
-        mistack.Push("municion 6");
-        Debug.Log(mistack.Peek());
-        mistack.Pop();
-        Debug.Log(mistack.Peek());
-        mistack.Pop();
-        Debug.Log(mistack.Peek());
-        mistack.Pop();
-        Debug.Log(mistack.Peek());
-        mistack.Pop();
-        Debug.Log(mistack.Peek());
-        mistack.Pop();
-        Debug.Log(mistack.Peek());
-        mistack.Pop();
-    }
+        public void pushPopPeek()
+        {
+            mistack.Push("municion 1");
+            mistack.Push("municion 2");
+            mistack.Push("municion 3");
+            mistack.Push("municion 4");
+            mistack.Push("municion 5");
+            mistack.Push("municion 6");
+            Debug.Log(mistack.Peek());
+            mistack.Pop();
+            Debug.Log(mistack.Peek());
+            mistack.Pop();
+            Debug.Log(mistack.Peek());
+            mistack.Pop();
+            Debug.Log(mistack.Peek());
+            mistack.Pop();
+            Debug.Log(mistack.Peek());
+            mistack.Pop();
+            Debug.Log(mistack.Peek());
+            mistack.Pop();
+        }
 
-}
+    }
 
