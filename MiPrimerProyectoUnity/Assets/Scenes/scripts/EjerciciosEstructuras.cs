@@ -44,7 +44,7 @@ public class EjerciciosEstructuras : MonoBehaviour
         }
         foreach (var numero in milista)
         {
-            Debug.Log(numero);
+            Debug.Log(numero +"  "+ "milista");
         }
     }
     //Crea una función que reciba como entrada un arreglo de enteros, y regrese un
