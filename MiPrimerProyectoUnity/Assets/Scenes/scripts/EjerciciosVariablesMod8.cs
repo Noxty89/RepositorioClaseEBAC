@@ -45,7 +45,7 @@ public class EjerciciosVariablesMod8 : MonoBehaviour
         Debug.Log(floatastring);
         micaracter = floatastring[5];
         Debug.Log(floatastring);
-        Debug.Log(mifloat);
+
         //Utilizar el método substring para separar su nombre completo en 3 strings y utilizar el 
         //método Split para separar su nombre completo en una lista de strings.
 
